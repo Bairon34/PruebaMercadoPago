@@ -1,0 +1,31 @@
+package com.example.pruebamercadopago.model
+
+data class ResultsModel(
+    val accepts_mercadopago: Boolean,
+    val available_quantity: Int,
+    val buying_mode: String,
+    val catalog_product_id: String,
+    val category_id: String,
+    val condition: String,
+    val currency_id: String,
+    val discounts: Any,
+    val domain_id: String,
+    val id: String,
+    val inventory_id: Any,
+    val listing_type_id: String,
+    val official_store_id: Any,
+    val order_backend: Int,
+    val original_price: Any,
+    val permalink: String,
+    val price: Double,
+    val sale_price: Any,
+    val site_id: String,
+    val sold_quantity: Int,
+    val stop_time: String,
+    val thumbnail: String,
+    val thumbnail_id: String,
+    val title: String,
+    val use_thumbnail_id: Boolean,
+    val variation_id: String,
+    val winner_item_id: Any
+)
