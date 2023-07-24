@@ -27,7 +27,8 @@ class ListProductActivity : AppCompatActivity() {
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
         observer()
-        searchViewModel.getProductsService(productSearchs!!)
+        //searchViewModel.getProductsService(productSearchs!!)
+        searchViewModel.getProductListFlow(productSearchs!!)
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -41,7 +42,7 @@ class ListProductActivity : AppCompatActivity() {
         }
 
         searchViewModel.product.observe(this){
-            if(it.isNotEmpty()){
+            if(it!!.isNotEmpty()){
                 binding.rcvListProduct.layoutManager= LinearLayoutManager(this)
                 binding.rcvListProduct.adapter= ProductAdapter(it,this)
                 binding.rcvListProduct.adapter!!.notifyDataSetChanged()
