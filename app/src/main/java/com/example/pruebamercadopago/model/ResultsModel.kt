@@ -1,10 +1,10 @@
 package com.example.pruebamercadopago.model
 
 data class ResultsModel(
-    val accepts_mercadopago: Boolean,
+    var accepts_mercadopago: Boolean,
     val available_quantity: Int,
     val buying_mode: String,
-    val catalog_product_id: String,
+    var catalog_product_id: String,
     val category_id: String,
     val condition: String,
     val currency_id: String,

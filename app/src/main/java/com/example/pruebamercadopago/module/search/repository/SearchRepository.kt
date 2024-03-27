@@ -13,16 +13,7 @@ class SearchRepository @Inject constructor(
     fun getProducts (wordSearchs:String)=  api.getProductSearchs(wordSearchs)
 
     fun getProductFlow(wordSearchs:String) = flow{
-        try{
-            val response =  api.getProductSearchs(wordSearchs).execute()
-            if(response.isSuccessful){
-                val product = response.body()
-                emit(product)
-            }else{
-                Log.e("error", "product no found" )
-            }
-        }catch (e : Exception){
-            Log.e("error", e.message.toString())
-        }
+        val product = api.getProductSearchs(wordSearchs).execute().body()
+        emit(product)
     }.flowOn(Dispatchers.IO)
 }

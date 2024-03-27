@@ -65,15 +65,11 @@ class SearchViewModel @Inject constructor(private val getProductSearch: SearchRe
                 }
                 .catch {
                     _result.value=true
-                    Log.e("error", it.message.toString() )
                 }
                 .collect{
                     val resul = it?.results
-                    if(!resul.isNullOrEmpty()){
-                        _product.value = resul
-                    }else{
-                        _result.value = true
-                    }
+                    _product.value = resul
+
                 }
         }
     }
